@@ -6,7 +6,8 @@
     "dev": "node tools/serve-v7.mjs 3000",
     "start": "node tools/serve-v7.mjs 3000",
     "build": "node tests/v7-engine.test.mjs",
-    "test": "node tests/v7-engine.test.mjs"
+    "test": "node tests/v7-engine.test.mjs",
+    "lint": "node --check tools/serve-v7.mjs apply-v7.mjs tests/v7-engine.test.mjs"
   },
   "dependencies": {}
 }

@@ -6,7 +6,7 @@
    - /api/v7/lan    LAN addresses so the app can print a pairing QR
    Works fully offline on a laptop hotspot or phone hotspot.  Usage: node tools/serve-v7.mjs [port]  (default 3000) */
 import http from 'node:http';import fs from 'node:fs';import fsp from 'node:fs/promises';import path from 'node:path';import os from 'node:os';import crypto from 'node:crypto';import {fileURLToPath} from 'node:url';
-const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');const PORT=+process.argv[2]||3000;const HOST=process.env.HOST||'0.0.0.0';
+const ROOT=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');const PORT=+process.env.PORT||+process.argv[2]||3000;const HOST=process.env.HOST||'0.0.0.0';
 let edge=null;try{edge=await import('./edge-tts.mjs')}catch(e){console.warn(' (edge-tts.mjs not found: Dilara voice disabled)')}
 const MIME={'.html':'text/html; charset=utf-8','.js':'text/javascript; charset=utf-8','.mjs':'text/javascript','.css':'text/css; charset=utf-8','.json':'application/json; charset=utf-8','.webmanifest':'application/manifest+json','.png':'image/png','.jpg':'image/jpeg','.svg':'image/svg+xml','.ttf':'font/ttf','.woff2':'font/woff2','.wav':'audio/wav','.mp3':'audio/mpeg','.ogg':'audio/ogg','.webm':'video/webm','.mp4':'video/mp4','.md':'text/markdown; charset=utf-8','.pdf':'application/pdf'};
 const VOICES=path.join(ROOT,'voices');
