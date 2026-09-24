@@ -1,0 +1,12 @@
+{
+  "name": "dadashmode-v7",
+  "version": "7.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "node tools/serve-v7.mjs 3000",
+    "start": "node tools/serve-v7.mjs 3000",
+    "build": "node tests/v7-engine.test.mjs",
+    "test": "node tests/v7-engine.test.mjs"
+  },
+  "dependencies": {}
+}

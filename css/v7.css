@@ -1,0 +1,50 @@
+/* DADASHMODE V7 · professional control-room skin for the v5 app (additive: only restyles, never hides v5 controls)
+   + responsive phone/desktop layout + V7 drawer + Chroma Studio. Remove this <link> to get the original look back. */
+:root{--v7-bg:#050914;--v7-panel:#0b1430;--v7-panel2:#101d44;--v7-line:#1f2e5c;--v7-ink:#f6f1e6;--v7-mut:#8f9bbb;--v7-gold:#ffc53d;--v7-orange:#ff7a1a;--v7-red:#ff2738;--v7-green:#00c98d;--v7-radius:14px}
+body{background:radial-gradient(1400px 700px at 70% -20%,#12245a 0%,#050914 55%) fixed!important;color:var(--v7-ink)}
+.top{background:linear-gradient(180deg,#0b1535,#070f27)!important;border-bottom:1px solid var(--v7-line)!important;box-shadow:0 6px 24px #0008}
+.tabs button,.tabs .tab{border-radius:999px!important;transition:background .15s,color .15s}
+.tabs button.on,.tabs .tab.on,.tabs button.active{background:var(--v7-gold)!important;color:#1a1000!important}
+.btn{border-radius:12px!important;transition:transform .08s,filter .15s,box-shadow .15s}
+.btn:hover{filter:brightness(1.12)}.btn:active{transform:scale(.97)}
+.btn:focus-visible,button:focus-visible,select:focus-visible,input:focus-visible{outline:3px solid var(--v7-gold)!important;outline-offset:2px}
+.monitor{border-radius:18px!important;overflow:hidden;box-shadow:0 0 0 1px var(--v7-line),0 24px 60px #000c!important;background:#000}
+.monitor canvas,#stage{border-radius:14px}
+.transport{background:linear-gradient(180deg,#0b1430,#08102a)!important;border:1px solid var(--v7-line)!important;border-radius:16px!important}
+.deck,.panel,.card{border-color:var(--v7-line)!important}
+::-webkit-scrollbar{width:10px;height:10px}::-webkit-scrollbar-thumb{background:#243669;border-radius:10px}::-webkit-scrollbar-track{background:transparent}
+/* dock + drawer */
+.dm5-dock button.v7dock{background:linear-gradient(180deg,#ffd35c,#f0a818);color:#1a1000;border-color:#ffd35c;font-weight:900}
+.dm5-dock button.v7dock.ck{background:#00b140;border-color:#00b140;color:#001a08}
+.dm5-dock button{background:#0b1430;border-color:var(--v7-line)}.dm5-dock button:hover,.dm5-dock button.on{background:var(--v7-orange);border-color:var(--v7-orange)}
+.dm5-drawer{background:#070f27f5!important;border-color:var(--v7-line)!important}.dm5-drawer .dm5-tabs button.on{background:var(--v7-gold)!important;color:#1a1000!important}
+.dm5-drawer.v7drawer{width:min(680px,calc(100vw - 60px))}.dm5-drawer.v7drawer .dm5-body{padding:8px}
+.v7ctl.desk .v7head{border-radius:12px}
+.v7qrgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px}.v7qr svg{width:100%;height:auto;border-radius:10px;background:#fff}.v7qr input{width:100%;margin-top:6px;direction:ltr;font-size:11px}
+.v7lab{display:block;margin:6px 0}.v7lab input{width:100%}
+.v7pre{white-space:pre-wrap;direction:ltr;text-align:left;max-height:360px;overflow:auto;background:#040816;border-radius:10px;padding:8px;font:12px/1.5 ui-monospace,Consolas,monospace;color:#cfe3ff}
+/* responsive: phone = one column, monitor on top, big touch targets */
+@media (max-width:900px){
+ .control{grid-template-columns:1fr!important}
+ .monitor{position:sticky;top:0;z-index:50}
+ .btn{min-height:44px}
+ .dm5-dock{top:auto!important;bottom:0;left:0!important;right:0;transform:none!important;flex-direction:row!important;justify-content:center;background:#050914ee;padding:6px;gap:6px;overflow-x:auto}
+ .dm5-dock button{writing-mode:horizontal-tb!important;border-radius:12px!important;border-left:1px solid var(--v7-line)!important;white-space:nowrap;padding:10px 12px!important}
+ .dm5-drawer,.dm5-drawer.v7drawer{left:0!important;right:0;top:0;bottom:56px;width:100vw!important;border-radius:0!important}
+}
+/* Chroma Studio */
+.v7ck{position:fixed;inset:0;z-index:9500;display:grid;grid-template-columns:1fr 380px;background:#02050d;direction:rtl;color:#f6f1e6;font:13px/1.6 Vazirmatn,Tahoma,sans-serif}
+.v7ck[hidden]{display:none}
+.v7ck-stage{position:relative;display:flex;align-items:center;justify-content:center;padding:14px;min-width:0}
+.v7ck-stage canvas{max-width:100%;max-height:100%;aspect-ratio:16/9;background:#000;border-radius:12px;box-shadow:0 0 0 1px #1f2e5c,0 30px 80px #000}
+.v7ck-info{position:absolute;top:18px;left:22px;background:#000a;padding:3px 10px;border-radius:99px;direction:ltr;font:12px ui-monospace,monospace}
+.v7ck-side{background:#070f27;border-inline-start:1px solid #1f2e5c;overflow:auto;padding:10px 12px}
+.v7ck-side header{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px}.v7ck-side header b{color:#ffc53d;font-size:16px}
+.v7ck-side .v7b{min-height:38px;font-size:13px;flex:0 0 auto;border:1px solid #233466;background:#101d44;color:#fff;border-radius:10px;padding:4px 10px;cursor:pointer}
+.v7ck-side .v7b.gold{background:#f0a818;color:#1a1000}.v7ck-side .v7b.bad{background:#b91c1c}
+.v7ck-g{display:flex;flex-wrap:wrap;gap:8px;align-items:center;padding:8px 0;border-bottom:1px dashed #1f2e5c}
+.v7ck-g label{display:flex;flex-direction:column;gap:2px;font-weight:700}.v7ck-g select{background:#050b1d;color:#fff;border:1px solid #233466;border-radius:8px;padding:4px 6px;font:inherit}
+.v7ck-sl label{display:block;margin:6px 0}.v7ck-sl span{display:flex;justify-content:space-between;color:#cbd5f0}.v7ck-sl i{font-style:normal;color:#ffc53d;direction:ltr}.v7ck-sl input[type=range]{width:100%;accent-color:#ffc53d}
+.v7ck-sl .v7row input{flex:1}
+.v7ck-help{color:#8f9bbb;font-size:12px}
+@media (max-width:900px){.v7ck{grid-template-columns:1fr;grid-template-rows:auto 1fr}.v7ck-side{max-height:55vh}}

@@ -1,0 +1,911 @@
+{
+ "format": "dadashmode-episode/3",
+ "name": "داداش‌مود · بانک زمان · قسمت ۱ (V7)",
+ "unit": "ثانیه",
+ "startBank": 45,
+ "v7": {
+  "enabled": true
+ },
+ "speakers": [
+  {
+   "id": "host",
+   "name": "جِمنای (داور)",
+   "provider": "gemini",
+   "voice": "Leda"
+  }
+ ],
+ "players": [
+  {
+   "id": "elias",
+   "name": "اِلیاس",
+   "color": "#ff2738",
+   "symbol": "▲",
+   "key": "a"
+  },
+  {
+   "id": "emad",
+   "name": "عِماد",
+   "color": "#00c98d",
+   "symbol": "●",
+   "key": "l"
+  }
+ ],
+ "theme": {
+  "font": "Lalezar",
+  "name": "بانک زمان V7",
+  "bg1": "#050914",
+  "bg2": "#0f1f45",
+  "accent": "#ffc53d",
+  "accent2": "#ff7a1a",
+  "ink": "#fffaf0",
+  "shade": "#0a1433"
+ },
+ "brief": {
+  "summary": "دو برادر، یک میز، یک کیف طلایی رمزدار و یک داور هوش مصنوعی. هر ثانیه‌ای که امروز می‌برید، در فینال ساعت شما می‌شود.",
+  "tone": "جِمنای: خشک، منصف، باهوش، کم‌حرف. عدد فقط از اپ. با دهان پر سکوت کامل.",
+  "characters": [
+   "اِلیاس · قرمز · چپ",
+   "عِماد · سبز · راست",
+   "جِمنای · داور · بنفش"
+  ],
+  "beats": [
+   "بِبَر (R1–R4)",
+   "خرج کن (فروشگاه)",
+   "ریسک کن (شوت)",
+   "بدو (گاوصندوق)"
+  ],
+  "directorNotes": [
+   "هیچ نتیجه‌ای برای جذاب‌تر شدن عوض نمی‌شود",
+   "ترتیب مرجع: قانون اعلام‌شده · تروثکم · لاگ اپ · جِمنای",
+   "کلمهٔ توقف ایمنی: «قرمز»"
+  ]
+ },
+ "segments": [
+  {
+   "id": "v70003",
+   "type": "title",
+   "title": "بانک زمان",
+   "subtitle": "هر بازی رو ببریم، برای آخر ویدیو زمان می‌گیریم",
+   "game": null,
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v70001",
+     "speaker": "host",
+     "emotion": "suspense",
+     "text": "سه... دو...",
+     "direction": ""
+    },
+    {
+     "id": "v70002",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "و مَن داوَرَم. پَس تَقَلُّب مَمنوع.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v70006",
+   "type": "bank",
+   "title": "بانک زمان",
+   "subtitle": "هر نفر ۴۵ ثانیه",
+   "game": null,
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v70004",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "مَن فَقَط چیزی رو میگَم که میبینَم.",
+     "direction": ""
+    },
+    {
+     "id": "v70005",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "مَن طَرَفِ هیچ‌کَس نیستَم. طَرَفِ قانونَم.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v70008",
+   "type": "intro",
+   "title": "برج لیوان",
+   "subtitle": "راند یک",
+   "game": "cup",
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v70007",
+     "speaker": "host",
+     "emotion": "excited",
+     "text": "راندِ یک. دَه لیوان، فَقَط با یِک دَست.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7000d",
+   "type": "rules",
+   "title": "قوانین برج لیوان",
+   "subtitle": "",
+   "game": "cup",
+   "duration": 0,
+   "reward": 0,
+   "rules": [
+    "۱۰ لیوان، ۴-۳-۲-۱",
+    "فقط یک دست؛ دست دوم پشت کمر",
+    "برج ۲ ثانیه سرپا بماند",
+    "اولین برج سالم: +۱۰"
+   ],
+   "lines": [
+    {
+     "id": "v70009",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "دَه لیوان، هَرَم چهار، سه، دو، یک.",
+     "direction": ""
+    },
+    {
+     "id": "v7000a",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "دَستِ دُوُم پُشتِ کَمَر.",
+     "direction": ""
+    },
+    {
+     "id": "v7000b",
+     "speaker": "host",
+     "emotion": "suspense",
+     "text": "بُرج باید دو ثانیه سالِم بِمونه.",
+     "direction": ""
+    },
+    {
+     "id": "v7000c",
+     "speaker": "host",
+     "emotion": "excited",
+     "text": "اَوَّلی، دَه ثانیه.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7000e",
+   "type": "countdown",
+   "title": "آماده‌اید؟",
+   "subtitle": "",
+   "game": null,
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [],
+   "status": "ok"
+  },
+  {
+   "id": "v7000h",
+   "type": "play",
+   "title": "برج لیوان",
+   "subtitle": "راند یک",
+   "game": "cup",
+   "duration": 30,
+   "reward": 10,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7000f",
+     "speaker": "host",
+     "emotion": "referee",
+     "text": "دَستِ دُوُم!",
+     "direction": ""
+    },
+    {
+     "id": "v7000g",
+     "speaker": "host",
+     "emotion": "referee",
+     "text": "سالِمه... یِک... دو.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7000j",
+   "type": "intro",
+   "title": "فاصله را خودت انتخاب کن",
+   "subtitle": "راند دو",
+   "game": "distance",
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7000i",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "راندِ دو. خَطِّت رو اِنتِخاب کُن. بَعد اَز قُفل، عَوَض نِمیشه.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7000n",
+   "type": "rules",
+   "title": "قوانین فاصله",
+   "subtitle": "",
+   "game": "distance",
+   "duration": 0,
+   "reward": 0,
+   "rules": [
+    "۲ متر +۵ · ۳ متر +۱۰ · ۴ متر +۲۰",
+    "هرچه دورتر، امتیاز بیشتر",
+    "خط یک بار انتخاب و قفل می‌شود",
+    "۳ پرتاب؛ اولین گل ارزش خط را می‌گیرد"
+   ],
+   "lines": [
+    {
+     "id": "v7000k",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "دو مِتر، پَنج ثانیه. سه مِتر، دَه. چهار مِتر، بیست.",
+     "direction": ""
+    },
+    {
+     "id": "v7000l",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "هر چی دورتَر، بیشتَر.",
+     "direction": ""
+    },
+    {
+     "id": "v7000m",
+     "speaker": "host",
+     "emotion": "referee",
+     "text": "اِنتِخاب قُفل شُد.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7000q",
+   "type": "play",
+   "title": "فاصله را خودت انتخاب کن",
+   "subtitle": "راند دو",
+   "game": "distance",
+   "duration": 60,
+   "reward": 20,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7000o",
+     "speaker": "host",
+     "emotion": "referee",
+     "text": "گُل.",
+     "direction": ""
+    },
+    {
+     "id": "v7000p",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "مَن باد رو نِمیبینَم. پَرتابِت رو دیدَم.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7000s",
+   "type": "intro",
+   "title": "دوئل ساندویچ",
+   "subtitle": "راند سه",
+   "game": "sandwich",
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7000r",
+     "speaker": "host",
+     "emotion": "excited",
+     "text": "راندِ سه. دوئلِ ساندویچ. اَوَّلی که قورت بِده، وَقت میبَره.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7000x",
+   "type": "rules",
+   "title": "قوانین دوئل ساندویچ",
+   "subtitle": "",
+   "game": "sandwich",
+   "duration": 0,
+   "reward": 0,
+   "rules": [
+    "دو ساندویچ یکسان · سقف ۶۰ ثانیه",
+    "آخرین لقمه = دست‌ها بالا (ساعت می‌ایستد)",
+    "۳۰ ثانیه برای قورت + دهان خالی",
+    "برنده = اختلاف زمان (کف ۳، سقف ۲۰)",
+    "ایمنی: کلمهٔ توقف «قرمز»"
+   ],
+   "lines": [
+    {
+     "id": "v7000t",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "دو ساندویچِ یِکسان. سَقف شَصت ثانیه.",
+     "direction": ""
+    },
+    {
+     "id": "v7000u",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "آخَرین لُقمه رَفت تو دَهن، دَستا بالا. بَعد سی ثانیه وَقت دارید قورت بِدید و دَهنِ خالی نِشون بِدید.",
+     "direction": ""
+    },
+    {
+     "id": "v7000v",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "بَرَنده، اِختِلافِ زَمان رو میگیره.",
+     "direction": ""
+    },
+    {
+     "id": "v7000w",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "هر کی بِگه «قِرمِز»، همه چی وایمیسه.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7000y",
+   "type": "countdown",
+   "title": "سه... دو... یک",
+   "subtitle": "",
+   "game": null,
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [],
+   "status": "ok"
+  },
+  {
+   "id": "v70013",
+   "type": "play",
+   "title": "دوئل ساندویچ",
+   "subtitle": "راند سه",
+   "game": "sandwich",
+   "duration": 60,
+   "reward": 20,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7000z",
+     "speaker": "host",
+     "emotion": "referee",
+     "text": "خالیه.",
+     "direction": ""
+    },
+    {
+     "id": "v70010",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "ساندویچ اَزت بُرد.",
+     "direction": ""
+    },
+    {
+     "id": "v70011",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "وَقت تَموم. ساندویچِت هَنوز داره نِگات می‌کُنه.",
+     "direction": ""
+    },
+    {
+     "id": "v70012",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "طِبقِ قانون... رَد.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v70017",
+   "type": "card",
+   "title": "بانک باز شد",
+   "subtitle": "از الان ثانیه‌ها پول هم هستن",
+   "game": "bankopen",
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v70014",
+     "speaker": "host",
+     "emotion": "suspense",
+     "text": "نه. بانک باز شُد.",
+     "direction": ""
+    },
+    {
+     "id": "v70015",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "آبی بَرای خودِت. قِرمز بَرای حَریف. طَلایی... بَرای شُجاع‌ها.",
+     "direction": ""
+    },
+    {
+     "id": "v70016",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "میتونی. وَلی هر چی بِخَری، اَز ساعَتِ فینالِت کَم میشه.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v70019",
+   "type": "intro",
+   "title": "دستکش، پازل و چسب",
+   "subtitle": "راند چهار",
+   "game": "glue",
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v70018",
+     "speaker": "host",
+     "emotion": "excited",
+     "text": "راندِ چهار. پازِلِ لوگو، شیش تیکه. چیدَن با دِستکَش، چَسب بی دِستکَش.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7001d",
+   "type": "rules",
+   "title": "قوانین پازل چسبی",
+   "subtitle": "",
+   "game": "glue",
+   "duration": 0,
+   "reward": 0,
+   "rules": [
+    "چیدن ۶ تکه با دستکش",
+    "چسب بدون دستکش",
+    "دکمهٔ «تمام» خودت",
+    "اولین «تمام» معتبر: +۱۵",
+    "چالش چسب: موفق ۱۰/۵ · ناموفق −۵"
+   ],
+   "lines": [
+    {
+     "id": "v7001a",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "دِستکَشا رو بِپوشید.",
+     "direction": ""
+    },
+    {
+     "id": "v7001b",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "چیدَن با دِستکَش، چَسب بی دِستکَش.",
+     "direction": ""
+    },
+    {
+     "id": "v7001c",
+     "speaker": "host",
+     "emotion": "excited",
+     "text": "اَوَّلی که دُکمهٔ تَمام رو بِزَنه، پونزده ثانیه.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7001h",
+   "type": "play",
+   "title": "دستکش، پازل و چسب",
+   "subtitle": "راند چهار",
+   "game": "glue",
+   "duration": 180,
+   "reward": 15,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7001e",
+     "speaker": "host",
+     "emotion": "referee",
+     "text": "یه تیکه هَنوز رو میزه. دِستکَش بَرمی‌گَرده.",
+     "direction": ""
+    },
+    {
+     "id": "v7001f",
+     "speaker": "host",
+     "emotion": "referee",
+     "text": "بَرَندهٔ چَسب...",
+     "direction": ""
+    },
+    {
+     "id": "v7001g",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "تِشخیص نِمیدَم.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7001j",
+   "type": "bank",
+   "title": "رونمایی بانک",
+   "subtitle": "سقف فاصله ۳۰ ثانیه",
+   "game": null,
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7001i",
+     "speaker": "host",
+     "emotion": "suspense",
+     "text": "سی. دَقیقاً روی مَرز. قانون اِعمال نِمیشه.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7001m",
+   "type": "rules",
+   "title": "فروشگاه کارت",
+   "subtitle": "",
+   "game": "shop",
+   "duration": 0,
+   "reward": 0,
+   "rules": [
+    "آبی برای خودت · قرمز برای حریف · طلایی برای شجاع‌ها",
+    "حداکثر ۲ کارت، فقط ۱ قرمز",
+    "نفر جلو: +۵ مالیات روی قرمز و طلایی",
+    "کارت‌ها ثانیه نمی‌دزدند · کف بانک ۲۰"
+   ],
+   "lines": [
+    {
+     "id": "v7001k",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "فُروشگاهِ کارت باز شُد. هر نَفَر حداکثَر دو کارت. فَقَط یِکی قِرمز. مَخفی.",
+     "direction": ""
+    },
+    {
+     "id": "v7001l",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "آبی بَرای خودِت. قِرمز بَرای حَریف. طَلایی... بَرای شُجاع‌ها.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7001q",
+   "type": "play",
+   "title": "فروشگاه کارت",
+   "subtitle": "خرید مخفی و هم‌زمان",
+   "game": "shop",
+   "duration": 60,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7001n",
+     "speaker": "host",
+     "emotion": "excited",
+     "text": "سِپَر فَعّال شُد. کارتِ قِرمز سوخت.",
+     "direction": ""
+    },
+    {
+     "id": "v7001o",
+     "speaker": "host",
+     "emotion": "excited",
+     "text": "آینه! کارت بَرگَشت به صاحِبِش.",
+     "direction": ""
+    },
+    {
+     "id": "v7001p",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "هیچ‌کَس حَمله نَکَرد. سِپَرِت... بیکار موند.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7001s",
+   "type": "rules",
+   "title": "شوت ریسک",
+   "subtitle": "",
+   "game": "risk",
+   "duration": 0,
+   "reward": 0,
+   "rules": [
+    "شرط علنی ۰ / ۱۰ / ۲۰",
+    "نفر عقب با ۱۵+ فاصله: همه‌چی ۳۰",
+    "توکن داخل مربع = +شرط · بیرون = −شرط",
+    "کف بانک ۲۰"
+   ],
+   "lines": [
+    {
+     "id": "v7001r",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "شوتِ ریسک. اَوَّل نَفَرِ عَقَب اِعلام میکُنه.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7001w",
+   "type": "play",
+   "title": "شوت ریسک",
+   "subtitle": "آخرین تصمیم قبل از فینال",
+   "game": "risk",
+   "duration": 60,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7001t",
+     "speaker": "host",
+     "emotion": "referee",
+     "text": "خورد.",
+     "direction": ""
+    },
+    {
+     "id": "v7001u",
+     "speaker": "host",
+     "emotion": "referee",
+     "text": "نَخورد. دو سانتِ دَردناک.",
+     "direction": ""
+    },
+    {
+     "id": "v7001v",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "اوضاع بَرعَکس شُد.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7001y",
+   "type": "bank",
+   "title": "آماده‌سازی فینال",
+   "subtitle": "داور نزدیک‌تر میاد",
+   "game": null,
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7001x",
+     "speaker": "host",
+     "emotion": "suspense",
+     "text": "داوَر نَزدیک‌تَر میاد.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v70020",
+   "type": "intro",
+   "title": "گاوصندوق",
+   "subtitle": "ساعت تو = بانک تو",
+   "game": "vault",
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7001z",
+     "speaker": "host",
+     "emotion": "epic",
+     "text": "ساعَتِ تو، بانکِ توئه. سه کُد، سه رَقَمِ رَمزِ واقِعیِ کیف.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v70025",
+   "type": "rules",
+   "title": "قانون گاوصندوق",
+   "subtitle": "",
+   "game": "vault",
+   "duration": 0,
+   "reward": 0,
+   "rules": [
+    "۱ · نقاشی کور → کد اول",
+    "۲ · اتاق حافظه → کد دوم (غلط = −۳)",
+    "۳ · معمای خنده‌دار → کد سوم (غلط = قفل ۵)",
+    "۴ · سه کد = رمز واقعی کیف طلایی",
+    "بیشترین زمان باقی‌مانده برنده است"
+   ],
+   "lines": [
+    {
+     "id": "v70021",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "نَقاشیِ کور. فَقَط یِه کَلَمه حَدس میزَنَم.",
+     "direction": ""
+    },
+    {
+     "id": "v70022",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "اُتاقِ حافِظه. هَشت لیوان.",
+     "direction": ""
+    },
+    {
+     "id": "v70023",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "مُعَمّای خَنده‌دار. جَوابِش خودِ رَقَمه.",
+     "direction": ""
+    },
+    {
+     "id": "v70024",
+     "speaker": "host",
+     "emotion": "epic",
+     "text": "کُد میگیری تا کیف رو باز کُنی.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v70026",
+   "type": "countdown",
+   "title": "فینال!",
+   "subtitle": "",
+   "game": null,
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [],
+   "status": "ok"
+  },
+  {
+   "id": "v7002b",
+   "type": "play",
+   "title": "گاوصندوق",
+   "subtitle": "دویدن اول و دوم",
+   "game": "vault",
+   "duration": 120,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v70027",
+     "speaker": "host",
+     "emotion": "referee",
+     "text": "عِینَک.",
+     "direction": ""
+    },
+    {
+     "id": "v70028",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "شیش اَز هَشت. حافِظه‌ت رَفته مُرَخَّصی.",
+     "direction": ""
+    },
+    {
+     "id": "v70029",
+     "speaker": "host",
+     "emotion": "excited",
+     "text": "مَغزِت روشَن شُد.",
+     "direction": ""
+    },
+    {
+     "id": "v7002a",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "گاوصَندوق باز شُد.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7002h",
+   "type": "winner",
+   "title": "کیف طلایی",
+   "subtitle": "تاج + پاکت سرنوشت + مجازات",
+   "game": "case",
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7002c",
+     "speaker": "host",
+     "emotion": "suspense",
+     "text": "بَرَندهٔ کیف...",
+     "direction": ""
+    },
+    {
+     "id": "v7002d",
+     "speaker": "host",
+     "emotion": "celebrate",
+     "text": "نِشانِ ساندویچِ طَلایی.",
+     "direction": ""
+    },
+    {
+     "id": "v7002e",
+     "speaker": "host",
+     "emotion": "calm",
+     "text": "پاکت‌ها رو هیچ‌کَس نَدیده. حَتّی مَن.",
+     "direction": ""
+    },
+    {
+     "id": "v7002f",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "پاکتِ بازَنده. لُقمهٔ مَرموز.",
+     "direction": ""
+    },
+    {
+     "id": "v7002g",
+     "speaker": "host",
+     "emotion": "serious",
+     "text": "چون مَن داوَرَم. و داوَر عاشِقِ عَدالَته.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  },
+  {
+   "id": "v7002j",
+   "type": "card",
+   "title": "دفاع از تاج",
+   "subtitle": "مجازات قسمت بعد رو شما انتخاب کنید",
+   "game": null,
+   "duration": 0,
+   "reward": 0,
+   "rules": [],
+   "lines": [
+    {
+     "id": "v7002i",
+     "speaker": "host",
+     "emotion": "playful",
+     "text": "قِسمَتِ بَعد... دِفاع اَز تاج.",
+     "direction": ""
+    }
+   ],
+   "status": "ok"
+  }
+ ]
+}

@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<meta name="theme-color" content="#050914">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>DADASHMODE V7 · کنترل گوشی</title>
+<link rel="stylesheet" href="css/v7-ctl.css">
+</head>
+<body class="v7remote">
+<div id="pick" class="v7pick" hidden>
+  <h1>DADASHMODE <b>V7</b></h1>
+  <p>این گوشی چه نقشی دارد؟</p>
+  <label class="v7pinrow">اتاق <input id="room" maxlength="8" autocapitalize="characters"> پین <input id="pin" maxlength="4" inputmode="numeric"></label>
+  <div class="v7roles">
+    <button data-role="DIRECTOR">🎬 کارگردان<small>همهٔ فرمان‌ها</small></button>
+    <button data-role="PLAYER_E" class="e">▲ بازیکن اِلیاس<small>تمام · کارت · شرط</small></button>
+    <button data-role="PLAYER_M" class="m">● بازیکن عِماد<small>تمام · کارت · شرط</small></button>
+    <button data-role="JUDGE">⚖️ داور<small>دهان پر/خالی · معتبر/غلط</small></button>
+    <button data-role="MONITOR">🖥 مانیتور<small>فقط نمایش</small></button>
+  </div>
+</div>
+<div id="app" class="v7ctl"></div>
+<div id="toast" class="v7toast" hidden></div>
+<script src="js/v7/v7-controller.js"></script>
+<script src="js/v7/remote.js"></script>
+</body>
+</html>

@@ -1,0 +1,1337 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>DADASHMODE V7 · بانک زمان</title>
+<meta name="description" content="استودیوی مسابقه و اتاق کنترل DADASHMODE V7 با کروما، کنترل ریموت گوشی، گرافیک زنده و قوانین بانک زمان">
+<meta property="og:title" content="DADASHMODE V7 · بانک زمان">
+<meta property="og:description" content="استودیوی مسابقه و اتاق کنترل DADASHMODE V7 با کروما، کنترل ریموت گوشی، گرافیک زنده و قوانین بانک زمان">
+<meta name="theme-color" content="#050914">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="css/v7.css">
+<link rel="stylesheet" href="css/v7-ctl.css">
+
+<style>
+:root {
+  --v7-bg: #050914;
+  --v7-panel: #0b1430;
+  --v7-panel2: #101d44;
+  --v7-line: #1f2e5c;
+  --v7-ink: #fffaf0;
+  --v7-mut: #8f9bbb;
+  --v7-gold: #ffc53d;
+  --v7-orange: #ff7a1a;
+  --v7-red: #ff2738;
+  --v7-green: #00c98d;
+  --v7-radius: 14px;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Vazirmatn', Tahoma, sans-serif;
+  background: radial-gradient(1400px 700px at 70% -20%, #12245a 0%, #050914 55%) fixed;
+  color: var(--v7-ink);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+/* Header */
+.top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 18px;
+  background: linear-gradient(180deg, #0b1535, #070f27);
+  border-bottom: 1px solid var(--v7-line);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+  z-index: 100;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.brand-title {
+  font-family: 'Lalezar', 'Vazirmatn', cursive;
+  font-size: 26px;
+  color: var(--v7-gold);
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.brand-badge {
+  background: linear-gradient(135deg, var(--v7-gold), var(--v7-orange));
+  color: #050914;
+  font-size: 13px;
+  font-weight: 900;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.top-btn {
+  background: var(--v7-panel2);
+  border: 1px solid var(--v7-line);
+  color: var(--v7-ink);
+  padding: 6px 12px;
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s ease;
+}
+
+.top-btn:hover {
+  background: #182c63;
+  border-color: var(--v7-gold);
+  color: #fff;
+}
+
+.top-btn.accent {
+  background: linear-gradient(180deg, #ffd35c, #f0a818);
+  color: #1a1000;
+  border-color: #ffd35c;
+  font-weight: 900;
+}
+
+.top-btn.green {
+  background: #00b140;
+  border-color: #00b140;
+  color: #001a08;
+  font-weight: 900;
+}
+
+/* Main Studio Layout */
+.studio-layout {
+  display: flex;
+  flex: 1;
+  position: relative;
+  min-height: calc(100vh - 60px);
+}
+
+.studio-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Stage Monitor */
+.monitor-wrapper {
+  width: 100%;
+  max-width: 1120px;
+  background: #000;
+  border-radius: 18px;
+  box-shadow: 0 0 0 1px var(--v7-line), 0 24px 60px rgba(0,0,0,0.7);
+  overflow: hidden;
+  position: relative;
+  aspect-ratio: 16 / 9;
+}
+
+#stage {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: #050914;
+}
+
+/* Transport Controls */
+.transport-bar {
+  width: 100%;
+  max-width: 1120px;
+  background: linear-gradient(180deg, #0b1430, #08102a);
+  border: 1px solid var(--v7-line);
+  border-radius: 16px;
+  padding: 12px 16px;
+  margin-top: 14px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.transport-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.t-btn {
+  background: #14224e;
+  border: 1px solid var(--v7-line);
+  color: var(--v7-ink);
+  font-size: 14px;
+  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.t-btn:hover {
+  background: #1c306d;
+}
+
+.t-btn.play-btn {
+  background: var(--v7-gold);
+  color: #0b1021;
+  border-color: var(--v7-gold);
+}
+
+.t-btn.play-btn:hover {
+  filter: brightness(1.1);
+}
+
+.seg-select {
+  background: #050b1d;
+  color: var(--v7-ink);
+  border: 1px solid var(--v7-line);
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
+  max-width: 260px;
+}
+
+/* Scoreboard */
+.scoreboard {
+  width: 100%;
+  max-width: 1120px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-top: 14px;
+}
+
+.player-score-card {
+  border-radius: 16px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #0c1630;
+  border: 2px solid;
+  position: relative;
+  overflow: hidden;
+}
+
+.player-score-card.elias {
+  border-color: var(--v7-red);
+  background: linear-gradient(180deg, rgba(255,39,56,0.12), #0c1630);
+}
+
+.player-score-card.emad {
+  border-color: var(--v7-green);
+  background: linear-gradient(180deg, rgba(0,201,141,0.12), #0c1630);
+}
+
+.player-info h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.player-info small {
+  color: var(--v7-mut);
+  font-size: 12px;
+}
+
+.player-bank-val {
+  font-size: 38px;
+  font-weight: 900;
+  font-variant-numeric: tabular-nums;
+  line-height: 1;
+}
+
+.player-bank-unit {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--v7-mut);
+  margin-inline-start: 4px;
+}
+
+/* Dock & Drawer */
+.dm5-dock {
+  position: fixed;
+  top: 80px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 8px;
+  z-index: 1000;
+}
+
+.dm5-dock button {
+  background: #0b1430;
+  border: 1px solid var(--v7-line);
+  color: var(--v7-ink);
+  padding: 12px 10px;
+  border-radius: 0 12px 12px 0;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  box-shadow: 4px 0 16px rgba(0,0,0,0.4);
+  transition: all 0.15s;
+}
+
+.dm5-dock button:hover {
+  background: var(--v7-orange);
+  border-color: var(--v7-orange);
+  color: #fff;
+}
+
+.dm5-drawer {
+  position: fixed;
+  top: 60px;
+  bottom: 0;
+  left: -700px;
+  width: min(680px, calc(100vw - 40px));
+  background: #070f27fa;
+  backdrop-filter: blur(14px);
+  border-right: 1px solid var(--v7-line);
+  box-shadow: 10px 0 40px rgba(0,0,0,0.7);
+  transition: left 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.dm5-drawer.open {
+  left: 0;
+}
+
+.dm5-drawer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--v7-line);
+  background: #050b1d;
+}
+
+.dm5-drawer-header h3 {
+  margin: 0;
+  font-size: 17px;
+  font-weight: 900;
+  color: var(--v7-gold);
+}
+
+.dm5-tabs {
+  display: flex;
+  gap: 4px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--v7-line);
+  background: #08122d;
+  overflow-x: auto;
+}
+
+.dm5-tabs button {
+  background: transparent;
+  border: none;
+  color: var(--v7-mut);
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dm5-tabs button.on {
+  background: var(--v7-gold) !important;
+  color: #0b1021 !important;
+}
+
+.dm5-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px;
+}
+
+.dm5-card {
+  background: #0c1630;
+  border: 1px solid var(--v7-line);
+  border-radius: 14px;
+  padding: 14px;
+  margin-bottom: 12px;
+}
+
+.dm5-card h4 {
+  margin: 0 0 10px;
+  color: var(--v7-gold);
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.dm5-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  margin: 8px 0;
+}
+
+.dm5-btn {
+  background: #14224e;
+  border: 1px solid var(--v7-line);
+  color: var(--v7-ink);
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 800;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.dm5-btn.pri { background: var(--v7-gold); color: #0b1021; }
+.dm5-btn.ok { background: #065f46; border-color: #10b981; }
+.dm5-btn.warn { background: #78350f; border-color: #f59e0b; }
+.dm5-btn.bad { background: #7f1d1d; border-color: #ef4444; }
+
+.dm5-in {
+  background: #050b1d;
+  border: 1px solid var(--v7-line);
+  color: #fff;
+  border-radius: 10px;
+  padding: 8px 12px;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+.dm5-muted {
+  color: var(--v7-mut);
+  font-size: 12px;
+  margin: 6px 0;
+}
+
+.dm5-pill {
+  padding: 4px 10px;
+  border-radius: 99px;
+  font-size: 12px;
+  font-weight: 800;
+}
+.dm5-pill.grn { background: #065f46; color: #a7f3d0; }
+.dm5-pill.red { background: #7f1d1d; color: #fecaca; }
+
+.dm5-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.dm5-list li {
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Toast */
+.v7-toast-box {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #065f46;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 12px;
+  font-size: 14px;
+  font-weight: 800;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  z-index: 10000;
+  transition: opacity 0.2s;
+  pointer-events: none;
+  opacity: 0;
+}
+.v7-toast-box.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="top-bar">
+  <div class="brand">
+    <div class="brand-title">
+      <span>DADASHMODE</span>
+      <span class="brand-badge">V7</span>
+      <span style="font-size:18px; color:var(--v7-ink); font-weight:400;">بانک زمان</span>
+    </div>
+  </div>
+  <div class="top-actions">
+    <button class="top-btn" id="btnSound">🔊 صدا: روشن</button>
+    <button class="top-btn" id="btnQR" onclick="window.V7 && window.V7.emit('qr')">📱 ریموت گوشی (F2)</button>
+    <button class="top-btn green" onclick="window.V7Chroma && window.V7Chroma.open()">🎬 استودیو کروما</button>
+    <button class="top-btn accent" id="btnToggleDrawer">🎮 V7 کنترل</button>
+    <button class="top-btn" id="btnFullscreen">⛶ تمام‌صفحه</button>
+  </div>
+</header>
+
+<!-- Studio -->
+<div class="studio-layout">
+  <!-- Dock -->
+  <aside class="dm5-dock" id="dm5Dock"></aside>
+
+  <!-- Drawer -->
+  <div class="dm5-drawer v7drawer" id="dm5Drawer">
+    <div class="dm5-drawer-header">
+      <h3 id="drawerTitle">DADASHMODE V7 · بانک زمان</h3>
+      <button class="t-btn" id="btnCloseDrawer" style="padding:4px 10px;">✕ بستن</button>
+    </div>
+    <div class="dm5-tabs" id="drawerTabs"></div>
+    <div class="dm5-body" id="drawerBody"></div>
+  </div>
+
+  <!-- Stage & Controls -->
+  <main class="studio-main">
+    <div class="monitor-wrapper" id="monitorWrapper">
+      <canvas id="stage" width="1920" height="1080"></canvas>
+    </div>
+
+    <!-- Transport -->
+    <div class="transport-bar">
+      <div class="transport-group">
+        <button class="t-btn" id="btnPrevSeg">⏮ قبلی</button>
+        <button class="t-btn play-btn" id="btnPlayPause">▶ پخش</button>
+        <button class="t-btn" id="btnNextSeg">بعدی ⏭</button>
+      </div>
+      <div class="transport-group">
+        <select class="seg-select" id="segDropdown"></select>
+        <span id="segTimeDisplay" style="font-size:13px; color:var(--v7-mut); font-weight:700;">۰۰:۰۰ / ۰۰:۰۰</span>
+      </div>
+      <div class="transport-group">
+        <button class="t-btn" id="btnSayLine">🗣 خواندن خط</button>
+        <button class="t-btn" id="btnResetBanks">🔄 ریست بانک‌ها</button>
+      </div>
+    </div>
+
+    <!-- Scoreboard -->
+    <div class="scoreboard">
+      <div class="player-score-card elias">
+        <div class="player-info">
+          <h3 style="color:var(--v7-red)">▲ اِلیاس</h3>
+          <small>بازیکن قرمز · کارت و کلید [A]</small>
+        </div>
+        <div>
+          <span class="player-bank-val" id="bankValElias" style="color:var(--v7-red)">۴۵</span>
+          <span class="player-bank-unit">ثانیه</span>
+        </div>
+      </div>
+      <div class="player-score-card emad">
+        <div class="player-info">
+          <h3 style="color:var(--v7-green)">● عِماد</h3>
+          <small>بازیکن سبز · کارت و کلید [L]</small>
+        </div>
+        <div>
+          <span class="player-bank-val" id="bankValEmad" style="color:var(--v7-green)">۴۵</span>
+          <span class="player-bank-unit">ثانیه</span>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Toast -->
+<div class="v7-toast-box" id="v7Toast"></div>
+
+<script>
+/* =========================================================================
+   DADASHMODE Base Architecture Bridge (DM5, AE, Audio, Stage, Banks, Segments)
+   ========================================================================= */
+'use strict';
+
+// 1. Audio Engine (Synthesizer Web Audio API for all FX)
+window.AudioContext = window.AudioContext || window.webkitAudioContext;
+let audioCtx = null;
+let soundEnabled = true;
+
+function getAC() {
+  if (!audioCtx) {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+  }
+  if (audioCtx.state === 'suspended') {
+    audioCtx.resume();
+  }
+  return audioCtx;
+}
+
+const AE = window.AE = {
+  get ctx() { return soundEnabled ? getAC() : null; },
+  boom() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(140, ac.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(30, ac.currentTime + 0.6);
+    g.gain.setValueAtTime(0.7, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.7);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.7);
+  },
+  ding() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(1200, ac.currentTime);
+    g.gain.setValueAtTime(0.4, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.4);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.4);
+  },
+  coin() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(987, ac.currentTime);
+    osc.frequency.setValueAtTime(1318, ac.currentTime + 0.08);
+    g.gain.setValueAtTime(0.35, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.45);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.45);
+  },
+  buzzer() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(130, ac.currentTime);
+    g.gain.setValueAtTime(0.5, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.4);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.4);
+  },
+  lock() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(600, ac.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(150, ac.currentTime + 0.09);
+    g.gain.setValueAtTime(0.4, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.1);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.1);
+  },
+  whistle() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(2400, ac.currentTime);
+    g.gain.setValueAtTime(0.3, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.25);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.25);
+  },
+  siren() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(600, ac.currentTime);
+    osc.frequency.linearRampToValueAtTime(900, ac.currentTime + 0.25);
+    osc.frequency.linearRampToValueAtTime(600, ac.currentTime + 0.5);
+    g.gain.setValueAtTime(0.3, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.6);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.6);
+  },
+  hit() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(180, ac.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(40, ac.currentTime + 0.15);
+    g.gain.setValueAtTime(0.6, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.18);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.18);
+  },
+  whoosh() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(250, ac.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(600, ac.currentTime + 0.12);
+    osc.frequency.exponentialRampToValueAtTime(180, ac.currentTime + 0.25);
+    g.gain.setValueAtTime(0.3, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.25);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.25);
+  },
+  tick() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(800, ac.currentTime);
+    g.gain.setValueAtTime(0.15, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.03);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.03);
+  },
+  sweepUp() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'triangle';
+    osc.frequency.setValueAtTime(220, ac.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(880, ac.currentTime + 0.4);
+    g.gain.setValueAtTime(0.35, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.45);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.45);
+  },
+  drumroll(dur = 1.2) {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const t0 = ac.currentTime;
+    for (let i = 0; i < 18; i++) {
+      const osc = ac.createOscillator();
+      const g = ac.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(180 + (i % 3) * 20, t0 + i * (dur / 20));
+      g.gain.setValueAtTime(0.15 + (i / 18) * 0.2, t0 + i * (dur / 20));
+      g.gain.exponentialRampToValueAtTime(0.001, t0 + (i + 1) * (dur / 20));
+      osc.connect(g);
+      g.connect(ac.destination);
+      osc.start(t0 + i * (dur / 20));
+      osc.stop(t0 + (i + 1) * (dur / 20));
+    }
+  },
+  fanfare() {
+    if (!soundEnabled) return;
+    const notes = [440, 554.37, 659.25, 880];
+    const ac = getAC();
+    notes.forEach((freq, i) => {
+      const osc = ac.createOscillator();
+      const g = ac.createGain();
+      osc.type = 'triangle';
+      osc.frequency.setValueAtTime(freq, ac.currentTime + i * 0.1);
+      g.gain.setValueAtTime(0.3, ac.currentTime + i * 0.1);
+      g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + i * 0.1 + 0.6);
+      osc.connect(g);
+      g.connect(ac.destination);
+      osc.start(ac.currentTime + i * 0.1);
+      osc.stop(ac.currentTime + i * 0.1 + 0.6);
+    });
+  },
+  lose() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(280, ac.currentTime);
+    osc.frequency.exponentialRampToValueAtTime(110, ac.currentTime + 0.6);
+    g.gain.setValueAtTime(0.4, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.6);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.6);
+  },
+  vault() {
+    if (!soundEnabled) return;
+    const ac = getAC();
+    const osc = ac.createOscillator();
+    const g = ac.createGain();
+    osc.type = 'sawtooth';
+    osc.frequency.setValueAtTime(90, ac.currentTime);
+    osc.frequency.linearRampToValueAtTime(140, ac.currentTime + 0.3);
+    osc.frequency.linearRampToValueAtTime(80, ac.currentTime + 0.6);
+    g.gain.setValueAtTime(0.4, ac.currentTime);
+    g.gain.exponentialRampToValueAtTime(0.001, ac.currentTime + 0.65);
+    osc.connect(g);
+    g.connect(ac.destination);
+    osc.start();
+    osc.stop(ac.currentTime + 0.65);
+  }
+};
+
+// 2. Global State & Data
+window.uid = () => 'v7_' + Math.random().toString(36).slice(2, 9);
+const faDigits = n => String(n ?? '').replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
+
+window.GAMES = {
+  cup: 'برج لیوان',
+  distance: 'فاصله',
+  sandwich: 'دوئل ساندویچ',
+  bankopen: 'بانک باز شد',
+  glue: 'دستکش، پازل و چسب',
+  shop: 'فروشگاه کارت',
+  risk: 'شوت ریسک',
+  memory: 'اتاق حافظه',
+  vault: 'گاوصندوق',
+  case: 'کیف طلایی سه‌لایه'
+};
+
+window.GAME_ALIAS = {
+  'ساندویچ': 'sandwich',
+  'دوئل': 'sandwich',
+  'چسب': 'glue',
+  'فروشگاه': 'shop',
+  'شوت': 'risk',
+  'حافظه': 'memory',
+  'پیچش': 'bankopen',
+  'گاوصندوق': 'vault'
+};
+
+window.DIST = {
+  green: { m: 2, sec: 5, col: '#2bd67b', fa: '۲ متر' },
+  yellow: { m: 3, sec: 10, col: '#ffd400', fa: '۳ متر' },
+  red: { m: 4, sec: 20, col: '#ff3b4e', fa: '۴ متر' }
+};
+
+window.THEMES = [
+  { name: 'بانک زمان V7', bg1: '#050914', bg2: '#0f1f45', accent: '#ffc53d', accent2: '#ff7a1a', ink: '#fffaf0', shade: '#0a1433', font: 'Lalezar' }
+];
+window.THEME = window.THEMES[0];
+
+const _journal = [];
+window.G = () => ({ journal: _journal, var: false });
+window.curSegIndex = () => window.st ? window.st.segIdx : 0;
+
+// Banks
+const playerBanks = { elias: 45, emad: 45 };
+
+window.bankOf = pid => {
+  if (pid === 'elias' || pid === 'E') return playerBanks.elias ?? 45;
+  if (pid === 'emad' || pid === 'M') return playerBanks.emad ?? 45;
+  return playerBanks[pid] ?? 45;
+};
+
+window.award = (pid, delta, reason) => {
+  const k = (pid === 'elias' || pid === 'E') ? 'elias' : 'emad';
+  playerBanks[k] = Math.max(0, (playerBanks[k] || 45) + delta);
+  const ev = { id: window.uid(), t: Date.now(), kind: 'v7', player: k, delta, reason, seg: window.curSegIndex() };
+  _journal.push(ev);
+  window.renderScores();
+  return ev;
+};
+
+window.renderScores = () => {
+  const eVal = document.getElementById('bankValElias');
+  const mVal = document.getElementById('bankValEmad');
+  if (eVal) eVal.textContent = faDigits(playerBanks.elias);
+  if (mVal) mVal.textContent = faDigits(playerBanks.emad);
+};
+
+window.renderJournal = () => {
+  // Dispatches change to V7 panel log if open
+  if (window.V7 && window.V7.emit) window.V7.emit('change', { journal: _journal });
+};
+
+window.toast = (msg, ms = 2200) => {
+  const t = document.getElementById('v7Toast');
+  if (!t) return;
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(t._timer);
+  t._timer = setTimeout(() => t.classList.remove('show'), ms);
+};
+
+window.mkSeg = o => Object.assign({
+  id: window.uid(),
+  type: 'play',
+  title: '',
+  subtitle: '',
+  game: null,
+  duration: 30,
+  reward: 0,
+  rules: [],
+  lines: []
+}, o);
+
+// Playback state
+window.st = {
+  segIdx: 0,
+  time: 0,
+  isPlaying: false,
+  line: null,
+  lineK: -1,
+  lineDur: 3000
+};
+
+// 3. Graphics & Illustration Helpers for Stage
+const cv = window.cv = document.getElementById('stage');
+const g = window.g = cv.getContext('2d');
+window.TH = window.THEME;
+
+window.F = size => `900 ${size}px Vazirmatn, Lalezar, sans-serif`;
+window.UF = size => `700 ${size}px Vazirmatn, sans-serif`;
+
+window.hexA = (hex, a = 1) => {
+  if (!hex || hex[0] !== '#') return hex;
+  const num = parseInt(hex.slice(1), 16);
+  const r = (num >> 16) & 255, g = (num >> 8) & 255, b = num & 255;
+  return `rgba(${r},${g},${b},${a})`;
+};
+
+window.mix = (c1, c2, t) => c1;
+window.eo = x => 1 - Math.pow(1 - Math.max(0, Math.min(1, x)), 3);
+window.ph = (t, period = 1) => (t % period) / period;
+window.cl = (v, a, b) => Math.max(a, Math.min(b, v));
+window.fa = faDigits;
+
+window.rr = (ctx, x, y, w, h, r = 16) => {
+  ctx.beginPath();
+  r = Math.min(r, w / 2, h / 2);
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+};
+
+window.fit = (ctx, text, maxW) => text;
+
+window.bigText = (ctx, txt, x, y, size = 64, fill = '#fff') => {
+  ctx.save();
+  ctx.font = window.F(size);
+  ctx.fillStyle = fill;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(txt, x, y);
+  ctx.restore();
+};
+
+window.chip = (ctx, txt, x, y, size = 24, bg = '#ffc53d', fg = '#050914') => {
+  ctx.save();
+  ctx.font = `800 ${size}px Vazirmatn`;
+  const w = ctx.measureText(txt).width + size * 1.4;
+  const h = size * 1.8;
+  window.rr(ctx, x - w / 2, y - h / 2, w, h, h / 2);
+  ctx.fillStyle = bg;
+  ctx.fill();
+  ctx.fillStyle = fg;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  ctx.fillText(txt, x, y);
+  ctx.restore();
+};
+
+window.panel = (ctx, x, y, w, h, r = 24, edge = '#ffc53d') => {
+  ctx.save();
+  window.rr(ctx, x, y, w, h, r);
+  ctx.fillStyle = 'rgba(11, 20, 48, 0.85)';
+  ctx.fill();
+  ctx.lineWidth = 3;
+  ctx.strokeStyle = edge;
+  ctx.stroke();
+  ctx.restore();
+};
+
+window.rays = (cx, cy, t, alpha, col = '#ffc53d', count = 16) => {
+  if (alpha <= 0) return;
+  g.save();
+  g.translate(cx, cy);
+  g.rotate(t * 0.4);
+  g.fillStyle = window.hexA(col, alpha * 0.25);
+  for (let i = 0; i < count; i++) {
+    g.beginPath();
+    g.moveTo(0, 0);
+    const a1 = (i * 2 * Math.PI) / count;
+    const a2 = a1 + Math.PI / count;
+    g.lineTo(Math.cos(a1) * 2000, Math.sin(a1) * 2000);
+    g.lineTo(Math.cos(a2) * 2000, Math.sin(a2) * 2000);
+    g.closePath();
+    g.fill();
+  }
+  g.restore();
+};
+
+window.vIcon = (name, x, y, size = 64, opts = {}) => {
+  g.save();
+  g.translate(x, y);
+  g.font = `${size}px sans-serif`;
+  g.textAlign = 'center';
+  g.textBaseline = 'middle';
+  g.fillText('🔒', 0, 0);
+  g.restore();
+};
+
+// Base illustrations container (v7-stage will populate and override these)
+window.ILL = {};
+
+// 4. Base draw() routine for the 1920x1080 stage canvas
+window.draw = function() {
+  const W = 1920, H = 1080;
+  g.save();
+  g.setTransform(1, 0, 0, 1, 0, 0);
+
+  // Background gradient
+  const bgGrad = g.createRadialGradient(W / 2, H * 0.35, 200, W / 2, H / 2, 1100);
+  bgGrad.addColorStop(0, '#0f2459');
+  bgGrad.addColorStop(0.6, '#08122f');
+  bgGrad.addColorStop(1, '#050914');
+  g.fillStyle = bgGrad;
+  g.fillRect(0, 0, W, H);
+
+  // Hexagon / Stage Grid accent
+  g.strokeStyle = 'rgba(31, 46, 92, 0.45)';
+  g.lineWidth = 2;
+  for (let x = 0; x < W; x += 120) {
+    g.beginPath();
+    g.moveTo(x, 0);
+    g.lineTo(x, H);
+    g.stroke();
+  }
+  for (let y = 0; y < H; y += 120) {
+    g.beginPath();
+    g.moveTo(0, y);
+    g.lineTo(W, y);
+    g.stroke();
+  }
+
+  // Header broadcast bug
+  g.save();
+  g.fillStyle = '#ffc53d';
+  g.font = '900 36px Lalezar, Vazirmatn';
+  g.textAlign = 'right';
+  g.textBaseline = 'top';
+  g.fillText('DADASHMODE V7 · بانک زمان', W - 60, 44);
+
+  // State pill
+  const sState = (window.V7 && window.V7.S) ? window.V7.S().state : 'READY';
+  const sFa = (window.V7 && window.V7.STATE_FA) ? window.V7.STATE_FA[sState] : sState;
+  window.chip(g, sFa, W / 2, 60, 26, '#18295b', '#ffc53d');
+
+  // Segments info
+  const cur = (window.P && window.P.segments) ? window.P.segments[window.st.segIdx] : null;
+  if (cur) {
+    g.fillStyle = '#fffaf0';
+    g.font = '900 68px Vazirmatn, Lalezar';
+    g.textAlign = 'center';
+    g.fillText(cur.title || '', W / 2, 170);
+
+    if (cur.subtitle) {
+      g.fillStyle = '#ffc53d';
+      g.font = '700 32px Vazirmatn';
+      g.fillText(cur.subtitle, W / 2, 230);
+    }
+
+    // If game has an illustration, call it
+    const illFn = cur.game ? window.ILL[cur.game] : null;
+    if (typeof illFn === 'function') {
+      try {
+        illFn(performance.now() / 1000, W / 2, H * 0.54, 1, 0);
+      } catch (err) {}
+    } else if (cur.rules && cur.rules.length) {
+      // Draw rules card
+      window.panel(g, W / 2 - 420, 300, 840, 80 + cur.rules.length * 70, 28, '#ffc53d');
+      cur.rules.forEach((rule, idx) => {
+        const y = 370 + idx * 70;
+        window.chip(g, faDigits(idx + 1), W / 2 + 350, y, 22, '#ffc53d', '#050914');
+        g.fillStyle = '#fffaf0';
+        g.font = '800 32px Vazirmatn';
+        g.textAlign = 'right';
+        g.textBaseline = 'middle';
+        g.fillText(rule, W / 2 + 300, y);
+      });
+    }
+  }
+
+  g.restore();
+};
+
+// 5. Speech / TTS Helper
+window.cueLine = function(line) {
+  if (!line || !line.text) return;
+  if (window.V7 && window.V7.cue) {
+    window.V7.cue(line.text, line.speaker || 'host');
+  }
+  if ('speechSynthesis' in window && soundEnabled) {
+    try {
+      window.speechSynthesis.cancel();
+      const utt = new SpeechSynthesisUtterance(line.text);
+      utt.lang = 'fa-IR';
+      utt.rate = 1.0;
+      window.speechSynthesis.speak(utt);
+    } catch (e) {}
+  }
+};
+
+// 6. DM5 Implementation
+window.DM5 = {
+  P: () => window.P,
+  save: () => {
+    try {
+      localStorage.setItem('v7_project', JSON.stringify(window.P));
+    } catch (e) {}
+  },
+  en: str => String(str ?? '').replace(/[۰-۹]/g, d => '۰۱۲۳۴۵۶۷۸۹'.indexOf(d)),
+  kvGet: async key => {
+    try {
+      const v = localStorage.getItem('dm5_' + key);
+      return v ? JSON.parse(v) : null;
+    } catch (e) { return null; }
+  },
+  kvPut: async (key, val) => {
+    try {
+      localStorage.setItem('dm5_' + key, JSON.stringify(val));
+    } catch (e) {}
+  },
+  curSeg: () => (window.P && window.P.segments) ? window.P.segments[window.st.segIdx] : null,
+  whenReady: (deps, cb) => {
+    // All base objects ready immediately
+    setTimeout(cb, 50);
+  },
+  dockButton: (id, label, onclick, cls = '') => {
+    const dock = document.getElementById('dm5Dock');
+    if (!dock) return;
+    let b = document.getElementById('dockBtn_' + id);
+    if (!b) {
+      b = document.createElement('button');
+      b.id = 'dockBtn_' + id;
+      dock.appendChild(b);
+    }
+    b.textContent = label;
+    b.className = cls;
+    b.onclick = onclick;
+  },
+  drawer: (id, title, tabs) => {
+    const el = document.getElementById('dm5Drawer');
+    const titleEl = document.getElementById('drawerTitle');
+    const tabsEl = document.getElementById('drawerTabs');
+    const bodyEl = document.getElementById('drawerBody');
+    if (titleEl) titleEl.textContent = title;
+
+    const drawerObj = {
+      el,
+      body: bodyEl,
+      tab: tabs[0][0],
+      isOpen: () => el.classList.contains('open'),
+      open: () => el.classList.add('open'),
+      close: () => el.classList.remove('open'),
+      toggle: () => el.classList.toggle('open'),
+      render: () => {}
+    };
+
+    tabsEl.innerHTML = '';
+    tabs.forEach(([tid, tlabel]) => {
+      const tb = document.createElement('button');
+      tb.dataset.tab = tid;
+      tb.textContent = tlabel;
+      if (tid === drawerObj.tab) tb.classList.add('on');
+      tb.onclick = () => {
+        drawerObj.tab = tid;
+        tabsEl.querySelectorAll('button').forEach(x => x.classList.toggle('on', x.dataset.tab === tid));
+        drawerObj.render();
+      };
+      tabsEl.appendChild(tb);
+    });
+
+    document.getElementById('btnCloseDrawer').onclick = () => drawerObj.close();
+    document.getElementById('btnToggleDrawer').onclick = () => drawerObj.toggle();
+
+    return drawerObj;
+  }
+};
+</script>
+
+<!-- Scripts in V7 order -->
+<script src="js/v7/v7-engine.js"></script>
+<script src="js/v7/v7-data.js"></script>
+<script src="js/v7/v7-qr.js"></script>
+<script src="js/v7/v7-core.js"></script>
+<script src="js/v7/v7-stage.js"></script>
+<script src="js/v7/v7-controller.js"></script>
+<script src="js/v7/v7-sync.js"></script>
+<script src="js/v7/v7-panel.js"></script>
+<script src="js/v7/v7-chroma.js"></script>
+
+<script>
+/* =========================================================================
+   Applet Initialization & Animation Loop
+   ========================================================================= */
+(function() {
+  // Initialize P with V7 episode if available
+  if (window.V7 && window.V7.v7Episode) {
+    window.P = window.V7.v7Episode();
+  } else {
+    window.P = {
+      name: 'داداش‌مود · بانک زمان · قسمت ۱ (V7)',
+      unit: 'ثانیه',
+      startBank: 45,
+      players: [
+        { id: 'elias', name: 'اِلیاس', color: '#ff2738', symbol: '▲' },
+        { id: 'emad', name: 'عِماد', color: '#00c98d', symbol: '●' }
+      ],
+      segments: []
+    };
+  }
+
+  // Populate segment dropdown
+  const segDropdown = document.getElementById('segDropdown');
+  function refreshSegs() {
+    if (!segDropdown || !window.P || !window.P.segments) return;
+    segDropdown.innerHTML = '';
+    window.P.segments.forEach((s, idx) => {
+      const opt = document.createElement('option');
+      opt.value = idx;
+      opt.textContent = `${faDigits(idx + 1)}. ${s.title || 'سگمنت'} (${s.subtitle || ''})`;
+      segDropdown.appendChild(opt);
+    });
+    segDropdown.value = window.st.segIdx;
+  }
+  refreshSegs();
+
+  segDropdown.onchange = e => {
+    window.st.segIdx = +e.target.value;
+    window.st.time = 0;
+  };
+
+  document.getElementById('btnPrevSeg').onclick = () => {
+    window.st.segIdx = Math.max(0, window.st.segIdx - 1);
+    segDropdown.value = window.st.segIdx;
+  };
+
+  document.getElementById('btnNextSeg').onclick = () => {
+    window.st.segIdx = Math.min(window.P.segments.length - 1, window.st.segIdx + 1);
+    segDropdown.value = window.st.segIdx;
+  };
+
+  const btnPlayPause = document.getElementById('btnPlayPause');
+  btnPlayPause.onclick = () => {
+    window.st.isPlaying = !window.st.isPlaying;
+    btnPlayPause.textContent = window.st.isPlaying ? '⏸ مکث' : '▶ پخش';
+  };
+
+  document.getElementById('btnResetBanks').onclick = () => {
+    if (confirm('آیا مایل به ریست بانک هر دو بازیکن به ۴۵ ثانیه هستید؟')) {
+      playerBanks.elias = 45;
+      playerBanks.emad = 45;
+      window.renderScores();
+      if (window.V7 && window.V7.exec) {
+        window.V7.exec('ep.reset', {}, { role: 'LOCAL' });
+      }
+      window.toast('بانک‌ها ریست شد: ۴۵ | ۴۵');
+    }
+  };
+
+  document.getElementById('btnSayLine').onclick = () => {
+    const cur = window.P.segments[window.st.segIdx];
+    if (cur && cur.lines && cur.lines.length) {
+      window.cueLine(cur.lines[0]);
+    } else {
+      window.cueLine({ text: 'سه... دو... یک... بانک زمان!', speaker: 'host' });
+    }
+  };
+
+  const btnSound = document.getElementById('btnSound');
+  btnSound.onclick = () => {
+    soundEnabled = !soundEnabled;
+    btnSound.textContent = soundEnabled ? '🔊 صدا: روشن' : '🔇 صدا: خاموش';
+  };
+
+  document.getElementById('btnFullscreen').onclick = () => {
+    const wrapper = document.getElementById('monitorWrapper');
+    if (!document.fullscreenElement) {
+      wrapper.requestFullscreen().catch(() => {});
+    } else {
+      document.exitFullscreen().catch(() => {});
+    }
+  };
+
+  // Render loop
+  function loop() {
+    requestAnimationFrame(loop);
+    if (typeof window.draw === 'function') {
+      try {
+        window.draw();
+      } catch (e) {
+        console.error('Stage draw error:', e);
+      }
+    }
+  }
+  requestAnimationFrame(loop);
+
+  // Automatically open the drawer on desktop for immediate readiness
+  setTimeout(() => {
+    if (window.innerWidth > 1000) {
+      const d = document.getElementById('dm5Drawer');
+      if (d) d.classList.add('open');
+    }
+  }, 500);
+})();
+</script>
+</body>
+</html>

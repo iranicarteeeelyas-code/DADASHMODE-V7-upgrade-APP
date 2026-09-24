@@ -1,0 +1,7 @@
+{
+  "name": "DADASHMODE V7 · بانک زمان",
+  "description": "استودیوی مسابقه و اتاق کنترل DADASHMODE V7 با کروما، کنترل ریموت گوشی، گرافیک زنده و قوانین بانک زمان",
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
